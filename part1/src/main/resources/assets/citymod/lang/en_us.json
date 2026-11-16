@@ -1,0 +1,20 @@
+{
+  "item.citymod.bank_card": "Bank Card",
+  "entity.citymod.city_npc": "Citizen",
+  "itemGroup.citymod.main": "City Mod",
+  "block.citymod.atm": "ATM",
+  "block.citymod.bank_desk": "Bank Window",
+  "block.citymod.bank_vault": "Bank Vault",
+  "block.citymod.job_board": "Job Board",
+  "block.citymod.crate_pile": "Crate Stack",
+  "block.citymod.delivery_point": "Delivery Point",
+  "block.citymod.cracked_road": "Cracked Road",
+  "block.citymod.chip_booth": "Chip Booth",
+  "block.citymod.roulette_table": "Roulette Table",
+  "block.citymod.blackjack_table": "Blackjack Table",
+  "block.citymod.dice_table": "Dice Table",
+  "block.citymod.wheel_of_fortune": "Wheel of Fortune",
+  "block.citymod.horse_board": "Horse Board",
+  "block.citymod.slot_machine": "Slot Machine",
+  "item.citymod.phone": "Phone"
+}

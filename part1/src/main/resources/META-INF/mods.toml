@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[52,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "citymod"
+version = "0.1.0"
+displayName = "City Mod"
+description = '''
+Город с экономикой: банк, работы, NPC, казино.
+'''
+
+[[dependencies.citymod]]
+modId = "forge"
+mandatory = true
+versionRange = "[52,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.citymod]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"

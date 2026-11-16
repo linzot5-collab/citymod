@@ -1,0 +1,20 @@
+{
+  "item.citymod.bank_card": "Банковская карта",
+  "entity.citymod.city_npc": "Горожанин",
+  "itemGroup.citymod.main": "City Mod",
+  "block.citymod.atm": "Банкомат",
+  "block.citymod.bank_desk": "Окно банка",
+  "block.citymod.bank_vault": "Хранилище банка",
+  "block.citymod.job_board": "Биржа труда (доска)",
+  "block.citymod.crate_pile": "Стеллаж с ящиками",
+  "block.citymod.delivery_point": "Пункт разгрузки",
+  "block.citymod.cracked_road": "Треснувшая дорога",
+  "block.citymod.chip_booth": "Касса казино",
+  "block.citymod.roulette_table": "Стол рулетки",
+  "block.citymod.blackjack_table": "Стол блэкджека",
+  "block.citymod.dice_table": "Стол костей",
+  "block.citymod.wheel_of_fortune": "Колесо фортуны",
+  "block.citymod.horse_board": "Табло скачек",
+  "block.citymod.slot_machine": "Игровой автомат",
+  "item.citymod.phone": "Телефон"
+}
