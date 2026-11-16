@@ -2,16 +2,23 @@ package com.citymod.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraftforge.client.gui.overlay.ForgeGui;
-import net.minecraftforge.client.gui.overlay.IGuiOverlay;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RenderGuiEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 /** Панель справа: баланс, банк, кредит, работа, время, статистика. */
-public class HudOverlay implements IGuiOverlay {
+@Mod.EventBusSubscriber(modid = "citymod", value = Dist.CLIENT)
+public class HudOverlay {
     private static final int W = 140;
     private static final int LINE = 11;
 
-    @Override
-    public void render(ForgeGui gui, GuiGraphics g, float partialTick, int screenWidth, int screenHeight) {
+    @SubscribeEvent
+    public static void onRenderGui(RenderGuiEvent.Post event) {
+        render(event.getGuiGraphics());
+    }
+
+    private static void render(GuiGraphics g) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.options.hideGui || mc.player == null || mc.level == null || mc.getDebugOverlay().showDebugScreen()) {
             return;
@@ -34,7 +41,7 @@ public class HudOverlay implements IGuiOverlay {
         };
 
         int h = lines.length * LINE + 8;
-        int x = screenWidth - W - 4;
+        int x = g.guiWidth() - W - 4;
         int y = 4;
 
         g.fill(x, y, x + W, y + h, 0x99000000);
