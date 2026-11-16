@@ -23,7 +23,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -101,9 +100,6 @@ public class CityMod {
             e.registerEntityRenderer(CITY_NPC.get(), NpcRenderer::new);
         }
 
-        @SubscribeEvent
-        public static void hud(RegisterGuiOverlaysEvent e) {
-            e.registerAboveAll(ResourceLocation.fromNamespaceAndPath(MODID, "hud"), new HudOverlay());
-        }
+      
     }
 }
