@@ -1,17 +1,17 @@
 package com.citymod.client;
 
-import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.LayeredDraw;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
+import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
 /** Панель справа: баланс, банк, кредит, работа, время, статистика. */
-public class HudOverlay implements LayeredDraw.Layer {
+public class HudOverlay implements IGuiOverlay {
     private static final int W = 140;
     private static final int LINE = 11;
 
     @Override
-    public void render(GuiGraphics g, DeltaTracker delta) {
+    public void render(ForgeGui gui, GuiGraphics g, float partialTick, int screenWidth, int screenHeight) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.options.hideGui || mc.player == null || mc.level == null || mc.getDebugOverlay().showDebugScreen()) {
             return;
@@ -34,7 +34,7 @@ public class HudOverlay implements LayeredDraw.Layer {
         };
 
         int h = lines.length * LINE + 8;
-        int x = g.guiWidth() - W - 4;
+        int x = screenWidth - W - 4;
         int y = 4;
 
         g.fill(x, y, x + W, y + h, 0x99000000);
