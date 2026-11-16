@@ -11,7 +11,6 @@ jobs:
         run: |
           cp -r part1/. .
           cp -r part2/src/. src/
-          ls -R src | head -50
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -21,6 +20,12 @@ jobs:
           gradle-version: 8.8
       - name: Build
         run: gradle build --no-daemon
+      - name: List Forge GUI classes
+        if: always()
+        run: |
+          J=$(find ~/.gradle/caches/forge_gradle -name 'forge-1.21.1-52.0.40_mapped_official_1.21.1.jar' | head -1)
+          echo "JAR: $J"
+          unzip -l "$J" | awk '{print $4}' | grep -E '^net/minecraftforge/client/' | grep -iE 'gui|overlay|layer|hud|render' | head -80
       - uses: actions/upload-artifact@v4
         with:
           name: citymod-jar
